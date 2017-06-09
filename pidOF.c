@@ -1,5 +1,3 @@
-#define _GNU_SOURCE
-#define _XOPEN_SOURCE 500
 #include <signal.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -75,10 +73,6 @@ int errno = 0;
            						}
 
 							r = readlink(line,linkname, bufsiz);
-							//if (r == -1) {
-            						//	perror("readlink");
-               						//	exit(EXIT_FAILURE);
-           						//}
 							strcat(linkname,"\0");
 							if(strlen(linkname)>0)
             						{
@@ -95,9 +89,6 @@ int errno = 0;
 				} 
 			}while(dp2 != NULL);
 
-			//} while(dp2 != NULL);
-         		//printf("found %s\n", dp->d_name);
-	      	//}	//closedir(dirp);
 	 }
 } while(dp != NULL);
 
